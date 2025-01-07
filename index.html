@@ -7,43 +7,53 @@
 
     <link rel="stylesheet" href="styles/app.css">
     <script src="js/carousel.js" defer></script>
+    <script src="js/custom-color.js" defer></script>
 </head>
 <body>
     <section class="hero">
         <div class="carousel-container">
-            <!-- Images -->
+            <!-- car default colors -->
             <div class="carousel">
-                <img src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="">
+                <img src="images/vehicles/cars/mercedes/colors/black-393939.png" alt="">
             </div>
 
+            <!--motorbike default colors  -->
             <div class="carousel">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="">
+                <img src="images/vehicles/motorbikes/yamaha/colors/black-393939.png" alt="">
             </div>
 
-
-            <div class="carousel">
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="">
-            </div>
-
-            <div class="carousel">
-                <img src="https://plus.unsplash.com/premium_photo-1664303847960-586318f59035?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-            </div>
-
-            <!-- Controls -->
+           <!-- Controls -->
             <div class="prev" onclick="prevImg()">&#10094;</div> 
             <div class="next" onclick="nextImg()">&#10095;</div> 
         </div>
 
         <div class="custom">
-            <div class="custom__title">Select Color</div>
-            <ul class="colors">
-                <li class="color color-red"></li>
-                <li class="color color-blue"></li>
-                <li class="color color-yellow"></li>
-                <li class="color color-green"></li>
-                <li class="color color-white"></li>
-            </ul>
-            <div class="angle"></div>
+            <div class="custom__colors">
+                <div class="custom-colors__title">Select Color</div>
+                <ul class="custom-colors__options">
+                    <li class="custom__color custom__color--black" onclick="selectColor('black-393939')"></li>
+                    <li class="custom__color custom__color--blue" onclick="selectColor('blue-3649A3')"></li>
+                    <li class="custom__color custom__color--cyan" onclick="selectColor('cyan-36A3A3')"></li>
+                    <li class="custom__color custom__color--green" onclick="selectColor('green-36A34C')"></li>
+                    <li class="custom__color custom__color--magenta" onclick="selectColor('magenta-9F36A3')"></li>
+                    <li class="custom__color custom__color--red" onclick="selectColor('red-A33647')"></li>
+                    <li class="custom__color custom__color--violet" onclick="selectColor('violet-6936A3')"></li>
+                    <li class="custom__color custom__color--yellow" onclick="selectColor('yellow-A1A336')"></li>
+
+                </ul>
+            </div>
+            <div class="custom__angle">
+                <div class="custom-angle__title">Change angle</div>
+               <div>
+                    <img src="" alt="">
+               </div> 
+               <div>
+                    <img src="" alt="">
+               </div> 
+               <div>
+                    <img src="" alt="">
+               </div> 
+            </div>
         </div>
     </section>
     <!-- To extract -->
