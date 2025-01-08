@@ -37,10 +37,10 @@ function selectColor(selectedColor) {
     if (imgSrc.includes('cars')) {
        selectedVehicle = 'cars/mercedes' 
     } else {
-        selectedVehicle = 'motorbikes/yamaha'
+        selectedVehicle = 'motorbikes/kawasaki'
     }
 
-    let selectedImgSrc = 'images/vehicles/' + selectedVehicle + '/colors/' + selectedColor + '.png';
+    let selectedImgSrc = 'images/vehicles/' + selectedVehicle + '/colors/' + getSelectedAngle(imgSrc) + '/' + selectedColor + '.png';
 
     // set the selected element
     currentElement.children[0].attributes[0].value = selectedImgSrc
@@ -50,6 +50,16 @@ function selectColor(selectedColor) {
     const backgroundColor = '#' + selectedColor.slice(minRange)
     const hero = document.querySelector('.hero')
     hero.style.backgroundColor = backgroundColor
+}
+
+function getSelectedAngle(path) {
+    const minRangeAngleStep = 7
+    const maxRangeAngleStep = 5
+
+    const minRangeAngle = path.indexOf('colors/') + minRangeAngleStep
+    const maxRangeAngle = path.indexOf('angle/') + maxRangeAngleStep
+
+    return path.slice(minRangeAngle, maxRangeAngle)
 }
 
 function removeActiveElement() {

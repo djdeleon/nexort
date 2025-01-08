@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: gray;
+    background-color: #393939;
 }
 
 .carousel-container {
@@ -74,6 +74,7 @@
     height: 50px;
     border-radius: 50%;
     list-style-type: none;
+    cursor: pointer;
 }
 
 .custom__color--black {
@@ -105,4 +106,24 @@
 }
 .custom__color--yellow {
     background-color: #A1A336;
+}
+
+.custom__angle {
+    /* display: flex; */
+}
+
+.custom-angle__gallery {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.angle-gallery {
+    width: 100px;
+    cursor: pointer;
+}
+
+.angle-gallery > img {
+    width: 100%;
 }
