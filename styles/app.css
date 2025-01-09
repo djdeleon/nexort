@@ -21,7 +21,7 @@
 
 .carousel > img {
     width: 100%;
-    height: 70vh;
+    height: 60vh;
     object-fit: contain;
 }
 
@@ -126,4 +126,22 @@
 
 .angle-gallery > img {
     width: 100%;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    padding: 0 10px;
+    background-color: gray;
+    border-radius: 100%;
+}
+
+.scroll-down > i::before {
+    content: "-";
+    font-size: 2rem;
+}
+
+.specs {
+    display: none;
 }

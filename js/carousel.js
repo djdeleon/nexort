@@ -20,6 +20,8 @@ function prevImg() {
     setCarouselDefault()
 
     setBackgroundColorDefault()
+
+    displayVehicleGallery() 
     
     carousel()
 }
@@ -53,7 +55,6 @@ function displayVehicleGallery()
 
     let activeImgSrc = activeCarousel.children[0].attributes[0].value
     const activeVehicle = activeImgSrc.slice(0, activeImgSrc.indexOf('colors'))
-    console.log('a', activeVehicle) 
     const angles = ['first angle', 'second angle', 'third angle']
 
     let angleGallery = document.getElementsByClassName('custom-angle__gallery')
@@ -62,9 +63,6 @@ function displayVehicleGallery()
         angleGallery[0].firstChild.remove()
     }
 
-    console.log(angleGallery[0])
-
-    
     angles.forEach(angle => {
         let div = document.createElement('div')
         div.setAttribute('onclick', 'selectAngle(' + '\'' + angle + '\'' + ')')

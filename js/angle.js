@@ -27,15 +27,9 @@ function selectAngle(angle)
     // get selected element color
     const selectedImgSrc = selectedAngle?.children[0].attributes[0].value
 
-
-    // console.log(getColor(currentImgSrc))
-    // console.log(getColor(selectedImgSrc))
-
     const updatedImgSrc = selectedAngle.children[0].attributes[0].value.replace(getColor(selectedImgSrc), getColor(currentImgSrc))
 
     selectedAngle.children[0].attributes[0].value = updatedImgSrc
-
-    // console.log(selectedAngle)
 
     // set the classes
     selectedAngle.classList.remove('angle-gallery')
@@ -51,7 +45,6 @@ function selectAngle(angle)
         if (carouselsChildren[i].className.includes('from-angle')) {
             carouselsChildren[i].remove()
         }
-
     }
 
     carouselContainer[0].appendChild(selectedAngle)
@@ -65,20 +58,15 @@ function getColor(imgSrc) {
     return imgSrc.slice(minRangeColor, maxRangeColor)
 }
 
-// Logic for dynamic angles gallery based on the active carousel image vehicle 
-// this will now involves condition
-// - only the angles for the selected active carousel image should show.
-// images/vehicles/cars/mercedes/colors/first angle/black-393939.png
-
 function angleGalleryDisplay() {
     const angles = ['first angle', 'second angle', 'third angle']
-    let elements = [];
 
     // get current vehicle
     let activeCarousel = document.getElementsByClassName('active')
     let activeImgSrc = activeCarousel[0].children[0].attributes[0].value
-    const activeVehicle = activeImgSrc.slice(0, activeImgSrc.indexOf('colors'))
-
+    const activeVehicle = activeImgSrc.slice(0, activeImgSrc.indexOf('/colors'))
+    const defaultImg = 'black-393939.png'
+    
     let angleGallery = document.getElementsByClassName('custom-angle__gallery')
     
     angles.forEach(angle => {
@@ -86,24 +74,14 @@ function angleGalleryDisplay() {
         div.setAttribute('onclick', 'selectAngle(' + '\'' + angle + '\'' + ')')
         
         let img = document.createElement('img')
-        img.setAttribute('src', activeImgSrc)
+        const imgSrc = `${activeVehicle}/colors/${angle}/${defaultImg}`
+        img.setAttribute('src', imgSrc)
         
         div.classList.add('angle-gallery')
         div.appendChild(img)
         
         angleGallery[0].appendChild(div)
     })
-    
-
-    console.log(...elements)
-        
-        // console.log(div)
-        console.log(activeCarousel[0])
-
-
-    // console.log(activeCarousel[0])
-    // console.log(activeVehicle)
-
 }
 
 angleGalleryDisplay()

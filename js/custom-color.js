@@ -1,24 +1,3 @@
-// const vehicles = {
-//     cars: [
-//         {
-//             name: 'mercedes',
-//             colors: {
-//                 background: '',
-//                 main: 'black',
-//                 options: ['red', 'green', 'blue', 'yellow', 'orange']
-//             }
-//         },
-//         {
-//             name: 'toyota',
-//             colors: {
-//                 background: '',
-//                 main: ''
-//             }
-//         }
-//     ],
-//     trucks: []
-// }
-
 function selectColor(selectedColor) {
     let carousels = document.getElementsByClassName('carousel')
     let currentElement = ''
@@ -36,8 +15,10 @@ function selectColor(selectedColor) {
 
     if (imgSrc.includes('cars')) {
        selectedVehicle = 'cars/mercedes' 
-    } else {
+    } else if (imgSrc.includes('motorbikes')) {
         selectedVehicle = 'motorbikes/kawasaki'
+    } else {
+        selectedVehicle = 'planes/aegean'
     }
 
     let selectedImgSrc = 'images/vehicles/' + selectedVehicle + '/colors/' + getSelectedAngle(imgSrc) + '/' + selectedColor + '.png';
