@@ -6,6 +6,8 @@
     <title>Nexort</title>
 
     <link rel="stylesheet" href="styles/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <script src="js/navbar.js" defer></script>
     <script src="js/carousel.js" defer></script>
     <script src="js/custom-color.js" defer></script>
     <script src="js/angle.js" defer></script>
@@ -70,11 +72,63 @@
             <i></i>
         </div>
     </section>
-    <!-- To extract -->
-    <section class="specs">
-        <nav>Navbar goes here...</nav>
-    </section>
-    <!-- To extract -->
-     <footer></footer>
+
+
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav__sm-screen">
+                <div class="sm-screen__logo">
+                    <img src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="">
+                </div> 
+                <div class="sm-screen__sidebar" onclick="toggleSidebar(true)">    
+                    <i class="fa-solid fa-bars nav-icon"></i>
+                </div>
+                <div class="sidebar-content">
+                    <div class="sidebar-content__link">Home</div>
+                    <div class="sidebar-content__link">Vehicles</div>
+                    <div class="sidebar-content__link">Snaps</div>
+                    <div class="sidebar-content__link">Login</div>
+                    <div class="sidebar-content__link">Register</div>
+                </div>
+
+                <!-- we can append this element once it gets clicked, so we only have one container for sidebar and one function call-->
+                <!-- <div class="sm-screen__sidebar-open">
+                    <i class="fa-solid fa-x"></i> 
+                </div> -->
+            </div>
+
+            <div class="nav__l-screen">
+                <div class="nav__links">
+                    <div class="nav-links__item">Home</div>
+                    <div class="nav-links__item">Vehicles</div>
+                    <div class="nav-links__item">Snaps</div>
+                </div>
+                <div class="nav__logo">
+                    <img src="" alt="">
+                </div>
+                <div class="nav__authentication">
+                    <div class="login">Login</div>
+                    <div class="register">Register</div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- To extract -->
+        <section class="specs">
+            
+        </section>
+
+        <div class="footer">
+            <div class="footer__logo">
+                <img src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="">
+            </div>
+            <div class="footer_tagline">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque cupiditate mollitia aut dignissimos. Atque debitis animi culpa maxime.</div>
+
+            <!-- No need to add links in the footer cos I'm going to make the Navbar sticky -->
+            <div class="footer__links">
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>
